@@ -33,10 +33,16 @@ async def upload_csv(file: UploadFile = File(...)):
 
     all_soldiers = []
     for s in soldiers:
-        all_soldiers.append(Soldier(s[0], s[1], s[2], s[3], s[4], s[5]))
+        all_soldiers.append(Soldier(personal_number=s[0], first_name=s[1], last_name=s[2], gender=s[3], city=s[4], distance=s[5]))
+
+        def placement_logic():
+            return
+
     return all_soldiers
 
-
+@app.get("/placementSummary")
+def show_summary():
+    return
 
 
 
